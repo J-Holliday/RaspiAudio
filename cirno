@@ -1,0 +1,2 @@
+#!/bin/sh
+ALSADEV="plughw:1,0" ~/workspace/raspi-audio/download/julius-4.3.1/julius/julius -C ~/workspace/raspi-audio/download/julius-kits/dictation-kit-v4.3.1-linux/cirno.jconf -nostrip &
