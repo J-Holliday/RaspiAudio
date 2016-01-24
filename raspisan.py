@@ -1,54 +1,9 @@
 ﻿# -*- coding: utf-8 -*-
 import socket
 import subprocess
-
-class select:
-
-	flag = 0 # not select mode
-	master = [""]
-
-	def __init__(self):
-		print("select init calling")
-		select.master = self.readMaster()
-		print("select init finish")
-
-	def callSelectMode(self):
-		yukkuri("音楽を選んでください")
-		select.flag = 1
-
-	def selectMusic(self,key):
-		if key.find("KEY") == -1:
-			return
-		res = self.searchMusic(key)
-		if res[0] == "None Array":
-			return
-		yukkuri(res[6] + "を選択しました")
-		path = res[1] + "/" + res[2] + "/" + res[3] + res[4]
-		f = open("selectBuffer","w")
-		f.write(path)
-		f.close()
-		select.flag = 0
-
-	def readMaster(self):
-		print("readmaster is called.")
-		f = open("musicMaster.csv","r")
-		str = f.read()
-		f.close()
-		ary = str.split('\n')
-		return ary
-
-	def searchMusic(self,key):
-		print("start searchMusic")
-		for line in select.master:
-			if line.find(key) >= 0:
-				ary = line.split(',')
-				print("music is found.")
-				return ary
-			else:
-				print(line)
-		ary = ["None Array"]
-		print("music is not found.")
-		return ary
+import audio
+import select
+import yukkuri
 
 def newsByMain():
 	u"""この関数はnewsparser.pyを補完します。
@@ -61,9 +16,6 @@ def newsByMain():
 	msg3 = msg2.replace(" ","")
 	print msg3
 	subprocess.Popen("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + msg3 + " | aplay -q",shell=True)
-
-def yukkuri(str):
-	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
 	a = audio()
