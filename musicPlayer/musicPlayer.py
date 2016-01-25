@@ -55,7 +55,7 @@ class select:
 
   def readMaster(self):
     print("readmaster is called.")
-    f = open("musicMaster.csv","r")
+    f = open("musicPlayer/musicMaster.csv","r")
     str = f.read()
     f.close()
     ary = str.split('\n')
