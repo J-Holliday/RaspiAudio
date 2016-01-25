@@ -10,6 +10,10 @@
 
 musashisakai should separate "select" class from raspisan.py.
 
+## Status
+
+finished. musashisakai will be merged to mitaka.
+
 ## Description
 
 Mitaka has below policy.
