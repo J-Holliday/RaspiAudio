@@ -1,10 +1,14 @@
-# RaspiAudio - mitaka
+# RaspiAudio - musashisakai
 
 ====
 
 ## Overview
 
-Mitaka is created for refactoring.
+[master]
+[mitaka]
+[musashisakai]
+
+musashisakai should separate "select" class from raspisan.py.
 
 ## Description
 
