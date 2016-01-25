@@ -2,54 +2,7 @@
 import socket
 import subprocess
 from musicPlayer import audio
-
-class select:
-
-	flag = 0 # not select mode
-	master = [""]
-
-	def __init__(self):
-		print("select init calling")
-		select.master = self.readMaster()
-		print("select init finish")
-
-	def callSelectMode(self):
-		yukkuri("音楽を選んでください")
-		select.flag = 1
-
-	def selectMusic(self,key):
-		if key.find("KEY") == -1:
-			return
-		res = self.searchMusic(key)
-		if res[0] == "None Array":
-			return
-		yukkuri(res[6] + "を選択しました")
-		path = res[1] + "/" + res[2] + "/" + res[3] + res[4]
-		f = open("selectBuffer","w")
-		f.write(path)
-		f.close()
-		select.flag = 0
-
-	def readMaster(self):
-		print("readmaster is called.")
-		f = open("musicMaster.csv","r")
-		str = f.read()
-		f.close()
-		ary = str.split('\n')
-		return ary
-
-	def searchMusic(self,key):
-		print("start searchMusic")
-		for line in select.master:
-			if line.find(key) >= 0:
-				ary = line.split(',')
-				print("music is found.")
-				return ary
-			else:
-				print(line)
-		ary = ["None Array"]
-		print("music is not found.")
-		return ary
+from musicPlayer import select
 
 def newsByMain():
 	u"""この関数はnewsparser.pyを補完します。
