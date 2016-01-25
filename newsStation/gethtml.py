@@ -56,9 +56,8 @@ class news:
 
     content = htmldata.read()
     htmldata.close()
-    #response = news.unescape_html_entity(content.decode('shift-jis')).encode('utf-8')
-    response = content
-    f = open("news2.txt","w")
+    response = news.unescape_html_entity(content.decode('shift-jis')).encode('utf-8')
+    f = open("news.txt","w")
     f.write(response)
     f.close()
 

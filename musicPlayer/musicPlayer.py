@@ -9,7 +9,7 @@ class audio:
     if audio.flag == 1:
       return
     print("audio.play is called")
-    f = open("selectBuffer","r")
+    f = open("musicPlayer/selectBuffer.txt","r")
     aroot = "/home/pi/workspace/raspi-audio/RaspiAudio/music/"
     afile = aroot + f.read()
     print(afile)
@@ -48,7 +48,7 @@ class select:
       return
     self.yukkuri(res[6] + "を選択しました")
     path = res[1] + "/" + res[2] + "/" + res[3] + res[4]
-    f = open("selectBuffer","w")
+    f = open("musicPlayer/selectBuffer.txt","w")
     f.write(path)
     f.close()
     select.flag = 0
