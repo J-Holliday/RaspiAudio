@@ -3,26 +3,16 @@ import socket
 import subprocess
 from musicPlayer import audio
 from musicPlayer import select
-
-def newsByMain():
-	u"""この関数はnewsparser.pyを補完します。
-	将来的に、統合される予定です。
-	"""
-	print("ニュースを探しています")
-	msg = speaker.randomselect()
-	print msg
-	msg2 = msg.replace("c2ch.net","").replace("2ch.net","")
-	msg3 = msg2.replace(" ","")
-	print msg3
-	subprocess.Popen("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + msg3 + " | aplay -q",shell=True)
+from newsStation import caster
 
 def yukkuri(str):
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
 	a = audio()
-	print 0
 	s = select()
+	print 0
+	c = caster()
 	print 1
 	if order == "再生":
 		a.play()
@@ -38,7 +28,7 @@ def interpreter(order,msg): # orderは認識された音声 msgはそれ以外�
 		#speaker.stopnews()
 		return "stopnews"
 	elif order == "話題":
-		newsByMain()
+		#c.newsByMain()
 	elif s.flag == 1:
 		s.selectMusic(order) 
 	return "interpreter is correctly finished."
