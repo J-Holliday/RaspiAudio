@@ -1,10 +1,10 @@
 ﻿# -*- coding: utf-8 -*-
 import sys,os
-sys.path.append(os.path.dirname("/home/pi/workspace/raspi-audio/RaspiAudio/musicPlayer/"))
-import socket
-import subprocess
+sys.path.append(os.path.dirname(os.getcwd() + "/musicPlayer/"))
 from musicPlayer import audio
 from musicPlayer import select
+import socket
+import subprocess
 from newsStation import caster
 
 def yukkuri(str):

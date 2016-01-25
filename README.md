@@ -1,4 +1,4 @@
-# RaspiAudio - mitaka
+# RaspiAudio - musashikoganei
 
 ====
 
@@ -6,11 +6,18 @@
 
 [master]
 [mitaka]
+[musashikoganei]
+
+musashikoganei should organize root directory.
+musicPlayer.py and other related files are too many,
+and newsStation.py is too.
+
+I should keep viewable directory.
 
 ## Status
 
-* musashisakai
-* higashikoganei
+* musicPlayer: finish
+* newsStation: processing
 
 ## Description
 

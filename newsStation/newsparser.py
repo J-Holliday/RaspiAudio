@@ -5,7 +5,7 @@ import subprocess
 class parser:
 	@classmethod
 	def parse(self,file):
-		f = open(file,"r")
+		f = open("newsStation/"+ file,"r")
 		res = f.read()
 		f.close()
 		ary = res.split("</a>")
@@ -23,10 +23,10 @@ class parser:
 				buf2 = ary3[0].split("(")
 				strout += buf2[0].replace("c2ch.net","") + "\n"
 				n += 1
-		f = open("newsparsed.txt","w")
+		f = open("newsStation/newsparsed.txt","w")
 		f.write(strout)
 		f.close()
-		ftopic = open("newstopic.txt","w")
+		ftopic = open("newsStation/newstopic.txt","w")
 		ftopic.write(str(n))
 		ftopic.close()
 		print("parsing finish.")
@@ -39,14 +39,14 @@ class speaker:
 	@classmethod
 	def randomselect(self):
 		print("randomselect is called.")
-		ftopic = open("newstopic.txt","r")
+		ftopic = open("newsStation/newstopic.txt","r")
 		restopic = ftopic.read()
 		ftopic.close()
 		print("restopic is " + restopic)
 		index = random.randint(1,int(restopic))
 		n = 1
 		print("random-index is" + str(index))
-		f = open("newsparsed.txt","r")
+		f = open("newsStation/newsparsed.txt","r")
 		res = f.read()
 		f.close()
 		ary = res.split("\n")
