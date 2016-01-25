@@ -42,10 +42,10 @@ class select:
 
   def selectMusic(self,key):
     if key.find("KEY") == -1:
-        return
+      return
     res = self.searchMusic(key)
     if res[0] == "None Array":
-        return
+      return
     self.yukkuri(res[6] + "を選択しました")
     path = res[1] + "/" + res[2] + "/" + res[3] + res[4]
     f = open("selectBuffer","w")
@@ -65,16 +65,14 @@ class select:
     print("start searchMusic")
     for line in select.master:
         if line.find(key) >= 0:
-            ary = line.split(',')
-            print("music is found.")
-            return ary
+          ary = line.split(',')
+          print("music is found.")
+          return ary
         else:
-            print(line)
+          print(line)
     ary = ["None Array"]
     print("music is not found.")
     return ary
   
   def yukkuri(self,str):
-    print 20
-	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
-	print 21
+    subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
