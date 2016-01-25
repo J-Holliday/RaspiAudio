@@ -1,4 +1,5 @@
 ﻿import subprocess
+import os
 
 class audio:
 
@@ -9,6 +10,7 @@ class audio:
     if audio.flag == 1:
       return
     print("audio.play is called")
+    os.getcwd()
     f = open("musicPlayer/selectBuffer.txt","r")
     aroot = "/home/pi/workspace/raspi-audio/RaspiAudio/music/"
     afile = aroot + f.read()
