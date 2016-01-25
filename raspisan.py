@@ -3,9 +3,10 @@ import sys,os
 sys.path.append(os.path.dirname(os.getcwd() + "/musicPlayer/"))
 from musicPlayer import audio
 from musicPlayer import select
+sys.path.append(os.path.dirname(os.getcwd() + "/newsStation/"))
+from newsStation import caster
 import socket
 import subprocess
-from newsStation import caster
 
 def yukkuri(str):
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
