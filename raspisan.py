@@ -1,4 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
+import sys,os
+sys.path.append(os.path.dirname("/home/pi/workspace/raspi-audio/RaspiAudio/musicPlayer/"))
 import socket
 import subprocess
 from musicPlayer import audio
