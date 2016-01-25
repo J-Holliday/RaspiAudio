@@ -1,4 +1,4 @@
-# RaspiAudio - musashisakai
+# RaspiAudio - mitaka
 
 ====
 
@@ -6,13 +6,10 @@
 
 [master]
 [mitaka]
-[musashisakai]
-
-musashisakai should separate "select" class from raspisan.py.
 
 ## Status
 
-finished. musashisakai will be merged to mitaka.
+* musashisakai was merged.
 
 ## Description
 
