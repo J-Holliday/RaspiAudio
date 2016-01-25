@@ -27,7 +27,7 @@ def interpreter(order,msg): # orderは認識された音声 msgはそれ以外�
 	elif order == "停止" and speker.flag == 1:
 		#speaker.stopnews()
 		return "stopnews"
-	elif order == "話題":
+	#elif order == "話題":
 		#c.newsByMain()
 	elif s.flag == 1:
 		s.selectMusic(order) 
