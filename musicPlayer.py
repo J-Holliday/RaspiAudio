@@ -10,7 +10,7 @@ class audio:
 			return
 		print("audio.play is called")
 		f = open("selectBuffer","r")
-		aroot = "/home/pi/workspace/raspi-audio/raspisan/music/"
+		aroot = "/home/pi/workspace/raspi-audio/RaspiAudio/music/"
 		afile = aroot + f.read()
 		print(afile)
 		if afile[-3:] == "mp3":

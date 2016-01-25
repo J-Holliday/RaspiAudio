@@ -67,14 +67,10 @@ def yukkuri(str):
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
-	print 0
 	a = audio()
-	print 1
 	s = select()
 	if order == "再生":
-		print 2
 		a.play()
-		print 3
 	elif order == "停止" and a.flag == 1:
 		a.stop()
 	elif order == "選択":
