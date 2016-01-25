@@ -9,8 +9,6 @@ class audio:
   def play(self):
     if audio.flag == 1:
       return
-    print("audio.play is called")
-    os.getcwd()
     f = open("musicPlayer/selectBuffer.txt","r")
     aroot = "/home/pi/workspace/raspi-audio/RaspiAudio/music/"
     afile = aroot + f.read()
@@ -22,7 +20,6 @@ class audio:
     audio.flag = 1
 
   def stop(self):
-    print("audio.stop is called")
     audio.playProc.terminate()
     audio.flag = 0
 
@@ -32,14 +29,10 @@ class select:
   master = [""]
 
   def __init__(self):
-    print("select init calling")
     select.master = self.readMaster()
-    print("select init finish")
 
   def callSelectMode(self):
-    print 10
     self.yukkuri("音楽を選んでください")
-    print 11
     select.flag = 1
 
   def selectMusic(self,key):
@@ -56,7 +49,6 @@ class select:
     select.flag = 0
 
   def readMaster(self):
-    print("readmaster is called.")
     f = open("musicPlayer/musicMaster.csv","r")
     str = f.read()
     f.close()
@@ -64,11 +56,9 @@ class select:
     return ary
 
   def searchMusic(self,key):
-    print("start searchMusic")
     for line in select.master:
         if line.find(key) >= 0:
           ary = line.split(',')
-          print("music is found.")
           return ary
         else:
           print(line)
