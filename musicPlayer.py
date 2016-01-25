@@ -36,7 +36,7 @@ class select:
 
   def callSelectMode(self):
     print 10
-    select.yukkuri("音楽を選んでください")
+    self.yukkuri("音楽を選んでください")
     print 11
     select.flag = 1
 
@@ -46,7 +46,7 @@ class select:
     res = self.searchMusic(key)
     if res[0] == "None Array":
         return
-    yukkuri(res[6] + "を選択しました")
+    self.yukkuri(res[6] + "を選択しました")
     path = res[1] + "/" + res[2] + "/" + res[3] + res[4]
     f = open("selectBuffer","w")
     f.write(path)
@@ -75,4 +75,6 @@ class select:
     return ary
   
   def yukkuri(self,str):
+    print 20
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
+	print 21
