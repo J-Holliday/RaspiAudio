@@ -74,5 +74,5 @@ class select:
     print("music is not found.")
     return ary
   
-  def yukkuri(str):
+  def yukkuri(self,str):
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
