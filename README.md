@@ -1,4 +1,4 @@
-# RaspiAudio - higashikoganei
+# RaspiAudio - mitaka
 
 ====
 
@@ -6,13 +6,11 @@
 
 [master]
 [mitaka]
-[higashikoganei]
-
-Higashikoganei should separate news from raspisan.py.
 
 ## Status
 
-before on-working yet.
+* musashisakai
+* higashikoganei
 
 ## Description
 
