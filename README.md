@@ -6,13 +6,12 @@
 
 [master]
 [mitaka]
-[higashikoganei]
 
-Higashikoganei should separate news from raspisan.py.
+higashikoganei should separate news from raspisan.py.
 
 ## Status
 
-before on-working yet.
+finish.
 
 ## Description
 
