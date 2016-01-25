@@ -21,13 +21,17 @@ def yukkuri(str):
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
 	a = audio()
+	print 0
 	s = select()
+	print 1
 	if order == "再生":
 		a.play()
 	elif order == "停止" and a.flag == 1:
 		a.stop()
 	elif order == "選択":
+		print 2
 		s.callSelectMode()
+		print 3
 	elif order == "ニュース":
 		return "playnews"
 	elif order == "停止" and speker.flag == 1:
