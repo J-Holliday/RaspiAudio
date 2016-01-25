@@ -68,7 +68,7 @@ def yukkuri(str):
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
 	print 0
-	a = musicPlayer.audio()
+	a = audio()
 	print 1
 	s = select()
 	if order == "再生":
