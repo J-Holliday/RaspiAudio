@@ -1,11 +1,23 @@
-# RaspiAudio - tokyo
+# RaspiAudio - mitaka
 
----
+====
 
-tokyo has below feature.
+Overview
 
-1. Last update is 16/1/19(center presentation day at lab).
-2. Provide basic RaspiAudio system.(play, stop, select, newsspeak)
-3. Root directory should be under ~/workspace/raspi-audio/ 
-4. This is not stand-alone program. If you want to use tokyo, you should get Julius.
- 
+Mitaka is created for refactoring.
+
+## Description
+
+Mitaka has below policy.
+
+1. Separate class from main module.
+2. Define constant value to conf-file.
+
+## Licence
+
+https://github.com/J-Holliday/
+http://icrus.org/iida/
+
+## Author
+
+https://github.com/J-Holliday
