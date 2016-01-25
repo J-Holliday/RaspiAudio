@@ -35,7 +35,9 @@ class select:
     print("select init finish")
 
   def callSelectMode(self):
-    yukkuri("音楽を選んでください")
+    print 10
+    select.yukkuri("音楽を選んでください")
+    print 11
     select.flag = 1
 
   def selectMusic(self,key):
