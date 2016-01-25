@@ -1,4 +1,4 @@
-import subprocess
+ï»¿import subprocess
 
 class audio:
 
@@ -35,7 +35,7 @@ class select:
     print("select init finish")
 
   def callSelectMode(self):
-    yukkuri("‰¹Šy‚ğ‘I‚ñ‚Å‚­‚¾‚³‚¢")
+    yukkuri("éŸ³æ¥½ã‚’é¸ã‚“ã§ãã ã•ã„")
     select.flag = 1
 
   def selectMusic(self,key):
@@ -44,7 +44,7 @@ class select:
     res = self.searchMusic(key)
     if res[0] == "None Array":
         return
-    yukkuri(res[6] + "‚ğ‘I‘ğ‚µ‚Ü‚µ‚½")
+    yukkuri(res[6] + "ã‚’é¸æŠã—ã¾ã—ãŸ")
     path = res[1] + "/" + res[2] + "/" + res[3] + res[4]
     f = open("selectBuffer","w")
     f.write(path)
