@@ -6,12 +6,15 @@
 
 [master]
 [mitaka]
+[musashikoganei]->[shinkoganei]
+
+Shinkoganei should separate yukkuri from raspisan.py,
+and create yukkuri class and organize aquestalk path.
+
 
 ## Status
 
-* musashisakai
-* higashikoganei
-* musashikoganei
+start point.
 
 ## Description
 

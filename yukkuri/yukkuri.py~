@@ -1,0 +1,22 @@
+import subprocess
+
+class yukkuri:
+
+    conf = yukkuri.yukkuri.setConf()
+    aquestalk = ""
+    @classmethod
+    def setConf(self):
+        print("setConf is called.")
+        f = open("yukkuri.conf","r")
+        buf = f.read()
+        f.close()
+        yukkuri.aquestalk = buf
+        return 0
+
+    @classmethod
+    def talk(self,msg):
+        yukkuri.proc = subprocess.call(yukkuri.aquestalk + " " + msg + " | aplay -q", shell=True)
+
+    @classmethod
+    def talkbg(self,msg):
+        yukkuri.proc = subprocess.Popen(yukkuri.aquestalk + " " + msg + " | aplay -q", shell=True)
