@@ -9,29 +9,26 @@ def yukkuri(str):
         return
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
-def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
-	a = musicPlayer.audio()
-	s = musicPlayer.select()
-	print 0
+def interpreter(_order,msg): # orderは認識された音声 msgはそれ以外の引数
 	#c = caster()
-	print 1
-	if order == "再生":
-		a.play()
-	elif order == "停止" and a.flag == 1:
-		a.stop()
-	elif order == "選択":
+        order = unicode(_order, "shift-jis","ignore")
+	if order == u"再生":
+		musicPlayer.audio.play()
+	elif order == u"停止" and a.flag == 1:
+		musicPlayer.audio.stop()
+	elif order == u"選択":
 		print 2
-		s.callSelectMode()
+		musicPlayer.select.callSelectMode()
 		print 3
-	elif order == "ニュース":
+	elif order == u"ニュース":
 		return "playnews"
-	elif order == "停止" and speker.flag == 1:
+	elif order == u"停止" and speker.flag == 1:
 		#speaker.stopnews()
 		return "stopnews"
-	#elif order == "話題":
+	#elif order == u"話題":
 		#c.newsByMain()
 	elif s.flag == 1:
-		s.selectMusic(order) 
+		musicPlayer.select.selectMusic(order) 
 	return "interpreter is correctly finished."
 
 if __name__ == "__main__":

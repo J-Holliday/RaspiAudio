@@ -31,12 +31,13 @@ class select:
   flag = 0 # not select mode
   master = [""]
 
-  @classmethod
+  def __init__(self):
+    select.master = self.readMaster()
+
   def callSelectMode(self):
     self.yukkuri("音楽を選んでください")
     select.flag = 1
 
-  @classmethod
   def selectMusic(self,key):
     if key.find("KEY") == -1:
       return
@@ -50,7 +51,6 @@ class select:
     f.close()
     select.flag = 0
 
-  @classmethod
   def readMaster(self):
     f = open("musicPlayer/musicMaster.csv","r")
     str = f.read()
@@ -58,7 +58,6 @@ class select:
     ary = str.split('\n')
     return ary
 
-  @classmethod
   def searchMusic(self,key):
     for line in select.master:
         if line.find(key) >= 0:
@@ -69,11 +68,6 @@ class select:
     ary = ["None Array"]
     print("music is not found.")
     return ary
- 
-  @classmethod
+  
   def yukkuri(self,str):
-    print("musicPlayer.select.yukkuri called")
-    return
     subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
-
-select.master = select.readMaster()
