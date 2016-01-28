@@ -14,13 +14,7 @@ and create yukkuri class and organize aquestalk path.
 
 ## Status
 
-I have separated yukkuri, and realized importing from other directory.
-
-But I got points of improvement.
-* I should refactoring musicPlayer.py and newsStation.py.
-- I should use function without class.
-- This problem is taken over to tama branch.
-- After all, shinkoganei is not executable branch.
+start point.
 
 ## Description
 

@@ -1,0 +1,3 @@
+class mod1c:
+	def func(self):
+		print("called mod1c.func")

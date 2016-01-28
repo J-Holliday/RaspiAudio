@@ -1,6 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
-from musicPlayer import musicPlayer
-from newsStation import newsStation
+from musicPlayer import audio
+from musicPlayer import select
+from newsStation import caster
 import socket
 import subprocess
 
@@ -8,10 +9,10 @@ def yukkuri(str):
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
-	a = musicPlayer.audio()
-	s = musicPlayer.select()
+	a = audio()
+	s = select()
 	print 0
-	#c = caster()
+	c = caster()
 	print 1
 	if order == "再生":
 		a.play()
