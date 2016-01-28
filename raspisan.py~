@@ -6,6 +6,7 @@ import socket
 import subprocess
 
 def yukkuri(str):
+        return
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
@@ -38,7 +39,7 @@ if __name__ == "__main__":
 	port = 10500
 
 	#news.get()
-	parser.parse("news.txt")
+	newsparser.parser.parse("newsStation/news.txt")
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((host, port))
 	yukkuri("ゆっくりしていってね")

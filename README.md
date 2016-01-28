@@ -6,11 +6,13 @@
 
 [master]
 [mitaka]
-[musashikoganei]->[shinkoganei]
+[musashikoganei]->[shinkoganei]->[tama]
 
-Shinkoganei should separate yukkuri from raspisan.py,
-and create yukkuri class and organize aquestalk path.
+I should make Debug-Mode with using dummy-audio-input.
+Dummy code give flow that if user input string to console of server, client got string message packet.
+Instead of flow thet if user input voice of julius server, client got string message packet.
 
+Then tama will deal with shinkoganei's problem.
 
 ## Status
 
