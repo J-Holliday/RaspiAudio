@@ -5,7 +5,7 @@ import subprocess
 class parser:
 	@classmethod
 	def parse(self,file):
-		f = open(file,"r")
+		f = open("newsStation/"+ file,"r")
 		res = f.read()
 		f.close()
 		ary = res.split("</a>")

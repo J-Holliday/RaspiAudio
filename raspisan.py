@@ -1,6 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 from musicPlayer import musicPlayer
 from newsStation import newsStation
+from newsStation import newsparser
 import socket
 import subprocess
 
@@ -36,11 +37,8 @@ if __name__ == "__main__":
 	host = 'localhost'
 	port = 10500
 
-	from gethtml import news
-	from newsparser import parser
-	from newsparser import speaker
 	#news.get()
-	parser.parse("news.txt")
+	newsparser.parser.parse("newsStation/news.txt")
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((host, port))
 	yukkuri("ゆっくりしていってね")
