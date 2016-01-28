@@ -36,7 +36,7 @@ def interpreter(order,msg): # orderは認識された音声 msgはそれ以外�
 
 if __name__ == "__main__":
 	host = 'localhost'
-	port = 10500
+	port = 10501
 
 	#news.get()
 	newsparser.parser.parse("newsStation/news.txt")

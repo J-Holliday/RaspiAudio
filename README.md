@@ -24,6 +24,11 @@ But I got points of improvement.
 - This problem is taken over to tama branch.
 - After all, shinkoganei is not executable branch.
 
+Current:
+* audio and select is worked.
+* news is not worked.
+* confirm to work in raspi-voice, dawn-raw_input.
+
 ## Description
 
 Mitaka has below policy.

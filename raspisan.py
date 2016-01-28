@@ -62,7 +62,7 @@ if __name__ == "__main__":
 		elif msg == "stopnews":
 			newsflag = 0
 			print("newsflag is zero")
-			speaker.stopnews()
+			newsparser.speaker.stopnews()
 		if newsflag > 0:
 			print("call speaker.playnews()")
-			speaker.playnews()
+			newsparser.speaker.playnews()
