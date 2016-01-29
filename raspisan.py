@@ -2,11 +2,9 @@
 from musicPlayer import musicPlayer
 from newsStation import newsStation
 from newsStation import newsparser
+from yukkuri import yukkuri
 import socket
 import subprocess
-
-def yukkuri(str):
-	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
 	#c = caster()
@@ -37,7 +35,7 @@ if __name__ == "__main__":
 	newsparser.parser.parse("newsStation/news.txt")
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((host, port))
-	yukkuri("ゆっくりしていってね")
+	yukkuri.talk("ゆっくりしていってね")
 	msg = ""
 	newsflag = 0
 
@@ -51,13 +49,8 @@ if __name__ == "__main__":
 				msg = interpreter(ary2[1],msg)
 			except:
 				print("error in xml parser.")
-		if msg == "playnews":
-			print("newsflag is incremented.")
-			newsflag += 1
+		if msg == "playnews": newsflag += 1
 		elif msg == "stopnews":
 			newsflag = 0
-			print("newsflag is zero")
 			newsparser.speaker.stopnews()
-		if newsflag > 0:
-			print("call speaker.playnews()")
-			newsparser.speaker.playnews()
+		if newsflag > 0: newsparser.speaker.playnews()

@@ -1,13 +1,9 @@
 import subprocess
 
-class yukkuri:
+aquestalk = "/home/pi/workspace/raspi-audio/downloads/aquestalkpi/AquesTalkPi"
 
-    aquestalk = "/home/pi/workspace/raspi-audio/downloads/aquestalkpi/AquesTalkPi"
+def talk(msg):
+    subprocess.call(aquestalk + " " + msg + " | aplay -q", shell=True)
 
-    @classmethod
-    def talk(self,msg):
-        yukkuri.proc = subprocess.call(yukkuri.aquestalk + " " + msg + " | aplay -q", shell=True)
-
-    @classmethod
-    def talkbg(self,msg):
-        yukkuri.proc = subprocess.Popen(yukkuri.aquestalk + " " + msg + " | aplay -q", shell=True)
+def talkbg(msg):
+    subprocess.Popen(aquestalk + " " + msg + " | aplay -q", shell=True)
