@@ -6,7 +6,6 @@ import socket
 import subprocess
 
 def yukkuri(str):
-        return
 	subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数

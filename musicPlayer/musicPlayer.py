@@ -72,8 +72,6 @@ class select:
  
   @classmethod
   def yukkuri(self,str):
-    print("musicPlayer.select.yukkuri called")
-    return
     subprocess.check_output("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + str + " | aplay -q",shell=True)
 
 select.master = select.readMaster()
