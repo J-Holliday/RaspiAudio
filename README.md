@@ -1,4 +1,4 @@
-# RaspiAudio - mitaka
+# RaspiAudio - Tama
 
 ====
 
@@ -8,7 +8,7 @@
 [mitaka]
 [musashikoganei]->[shinkoganei]->[tama]
 
-Mitaka give musicPlayer's function without class.
+Tama give musicPlayer's function without class.
 And create Gmail-confirm-system.
 
 ## Status
