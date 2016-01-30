@@ -12,7 +12,7 @@ class audio:
     if audio.flag == 1:
       return
     f = open("musicPlayer/selectBuffer.txt","r")
-    aroot = "/home/pi/workspace/raspi-audio/RaspiAudio/music/"
+    aroot = "/home/pi/workspace/raspi-audio/music/"
     afile = aroot + f.read()
     print(afile)
     if afile[-3:] == "mp3":
