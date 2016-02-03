@@ -1,4 +1,4 @@
-# RaspiAudio - mitaka
+# RaspiAudio - shiraitodai 
 
 ====
 
@@ -6,16 +6,15 @@
 
 [master]
 [mitaka]
-[musashikoganei]->[shinkoganei]->[tama]
+[musashikoganei]->[shinkoganei]->[tama]->[shiraitodai]
 
-Mitaka give musicPlayer's function without class.
-And create Gmail-confirm-system.
+Shiraitodai try to make sendmail system.
+And trying to do refactoring news.
 
 ## Status
 
+I have created sendmail system.
 I'm leaving refactoring of news.
-But this is taken over to next branch "shiraitodai".
-Tama have finished for refactoring of musicPlayer and creating mail.
 
 ## Description
 
