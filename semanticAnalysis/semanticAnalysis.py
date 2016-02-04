@@ -16,5 +16,9 @@ def send(sentence):
 
 def searchSubject(sentence):
 	for word in sentence:
-		print 1
+		for buf in item:
+			if word == buf[0]:
+				print word
+				return
+	print("None. Please comfirm which parameter is array.")
 			
