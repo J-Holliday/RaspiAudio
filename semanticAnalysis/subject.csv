@@ -1,0 +1,6 @@
+Data,Class,Priotiry,Contradiction
+再生,musicPlayer,11,IGNORE
+停止,musicPlayer,10,FORCE
+選択,musicPlayer,12,AGAIN
+ニュース,news,13,AGAIN
+Gmail,mail,14,AGAIN
