@@ -1,2 +1,2 @@
 #!/bin/sh
-pushd ~/workspace/raspi-audio/download/julius-4.3.1/
+pushd ~/workspace/raspi-audio/downloads/julius-4.3.1/
