@@ -58,24 +58,36 @@ class speaker:
 		return "None"
 
 	@classmethod
-	def playnews(self):
+	def playnewsSingle(self):
 		if speaker.flag == 1:
 			return
-		print("speker.playnews is called.")
-		if  speaker.playProc.poll() == 0:
+		if speaker.playProc.poll() == 0 or speaker.playProc.poll() == None:
 			msg = speaker.randomselect()
 			print msg
 			msg2 = msg.replace("c2ch.net","").replace('2ch.net','')
 			msg3 = msg2.replace(" ","")
 			print msg3
-			speaker.playProc = subprocess.Popen("/home/pi/workspace/raspi-audio/download/aquestalkpi/AquesTalkPi " + msg3 + " | aplay -q",shell=True)
-			speaker.flag == 1
+			speaker.playProc = subprocess.Popen("/home/pi/workspace/raspi-audio/downloads/aquestalkpi/AquesTalkPi " + msg3 + " | aplay -q",shell=True)
+			speaker.flag = 1
+
+	@classmethod
+	def playnews(self):
+		if speaker.flag == 1:
+			return
+		print("speker.playnews is called.")
+		if speaker.playProc.poll() == 0:
+			speaker.playProc = subprocess.Popen("./newsStation/playnewsLoop.sh &",shell=True)
+			print str(speaker.playProc.pid)
+			speaker.flag = 1
+			print str("SPEAKER.FLAG :" + speaker.flag)
 		else:
-			print("news process is executed.")
+			print("playnews process is executed.")
 			print(str(speaker.playProc.poll()))
 
 	@classmethod
 	def stopnews(self):
 		print("speaker.stopnews is called.")
-		speaker.playProc.terminate()
-		spekaker.flag == 0
+		print(str(speaker.playProc.pid))
+		subprocess.call("pkill -f playnewsLoop.sh",shell=True)
+		print("pkill -f playnewsLoop.sh is executed.")
+		speaker.flag = 0

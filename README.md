@@ -19,7 +19,17 @@ Process is thrown into SHIRAITODAI-BUF directory.
 ## Status
 
 I have created sendmail system.
-I'm leaving refactoring of news.
+I have done refactoring of news.
+
+News process management is below.
+
+News Start:
+[raspisan.py]->[newsparser.py]->[class"speaker"]->[func"playnews"]->[playnewsLoop.sh]->[call.py]->[func"playnewsSingle"]
+
+News Stop:
+[raspisan.py]->[newsparser.py]->[class"speaker"]->[func"stopnews"]->["$ pkill -f 'playnewsLoop.sh'"]
+
+Key Point is via sh.
 
 ## Description
 
