@@ -1,42 +1,29 @@
-# RaspiAudio - shiraitodai 
+# RaspiAudio - tachikawa 
 
 ====
 
 ## Overview
 
 [master]
-[mitaka]
-[musashikoganei]->[shinkoganei]->[tama]->[shiraitodai]
+[tachikawa]
 
-Shiraitodai try to make sendmail system.
-And trying to do refactoring news.
+Tachikawa is heir to mitaka.
 
-!CAUTION ISSUE
-I tried to use julius input mode without mic.
-But that didn't cause expected achivement.
-Process is thrown into SHIRAITODAI-BUF directory.
+Mitaka have realized its Policy-1,
+but not Policy-2,
+and I decided to leave problem of Policy-2.
+
+Tachikawa 
 
 ## Status
 
-I have created sendmail system.
-I have done refactoring of news.
-
-News process management is below.
-
-News Start:
-[raspisan.py]->[newsparser.py]->[class"speaker"]->[func"playnews"]->[playnewsLoop.sh]->[call.py]->[func"playnewsSingle"]
-
-News Stop:
-[raspisan.py]->[newsparser.py]->[class"speaker"]->[func"stopnews"]->["$ pkill -f 'playnewsLoop.sh'"]
-
-Key Point is via sh.
+Branch Create:02091500
 
 ## Description
 
-Mitaka has below policy.
+Tachikawa has below policy.
 
-1. Separate class from main module.
-2. Define constant value to conf-file.
+1. Make to useful interpreter-basemodel. 
 
 ## Licence
 
