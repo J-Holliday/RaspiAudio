@@ -38,7 +38,7 @@ class select:
 
   @classmethod
   def selectMusic(self,key):
-    if key.find("KEY") == -1:
+    if key.find("MUSIC") == -1:
       return
     res = self.searchMusic(key)
     if res[0] == "None Array":

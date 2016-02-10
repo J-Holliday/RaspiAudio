@@ -1,0 +1,16 @@
+Subject,Number,Order,Ingredients(order1:order2...;property1:property2...)
+mail,10,check mail,check;account
+mail,11,send mail,send;to:title:sentence
+music,20,play music,play;title
+music,21,play music AI choose,play:AI-choose;user-opinion
+music,22,shuffle music,shuffle;
+music,23,stop music,stop;
+news,30,play news,play;
+news,31,stop news,stop;
+time,40,check time,check;location
+time,41,set alerm,alerm:set;alerm-time
+time,42,unset alerm,alerm:unset;
+time,43,set timer,set:timer;timer-time
+time,44,unset timer,timer:unset;
+traffic,51,check traffic,check;location
+weather,52,check weather,check;weather
