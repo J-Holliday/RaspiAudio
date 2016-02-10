@@ -1,0 +1,5 @@
+sentence1: <s> わるい KEY020000 し </s>
+wseq1: 8 3 1 4 9
+phseq1: silB | w a r u i | r o m a n o m u s u m e | sh i | silE
+cmscore1: 0.908 0.887 0.970 0.437 1.000
+score1: -8334.738281
