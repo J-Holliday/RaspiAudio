@@ -1,32 +1,32 @@
-# RaspiAudio - tachikawa 
+# RaspiAudio - hachiouji 
 
 ====
 
 ## Overview
 
 [master]
-[tachikawa]
+[hachiouji]
 
-Tachikawa is heir to mitaka.
+Hachiouji is heir to tachikawa.
 
-Mitaka have realized its Policy-1,
-but not Policy-2,
-and I decided to leave problem of Policy-2.
+!Important
+Tachikawa have realized that input wavfile to julius-server.
+* First, execute "$ python ASRServer.py &"
+* Second, execute "$ python ASRClient.py" (or such name)
+Then, I can get Julius-output.
 
-Tachikawa 
+Therefore, tachikawa give roll of current-branch to new branch hachiouji.
+hachiouji is expected that Julius with wavfile become useful.
 
 ## Status
 
-Branch Create:02091500
-
-1. finish feature-vector base model.
-2. leave word.csv adjusting to order.csv
+Branch Create:02102336
 
 ## Description
 
-Tachikawa has below policy.
+Hachiouji has below policy.
 
-1. Make to useful interpreter-basemodel. 
+1. Make julius with wavfile become useful.
 
 ## Licence
 
