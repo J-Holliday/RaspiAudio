@@ -33,33 +33,51 @@ def send(sentence):
 	# get feature vector
 	parseList(sentence)
 	# collation between feature vector and model
+	if len(featureVector.fv) == 0:
+		return -1
 	resultModel = featureVector.collation()
 	# get ordernumber 
 	ordernumber = featureVector.modelDecode(resultModel)
-	print "ordernumber:%s" % str(ordernumber)
+	return ordernumber
 
 def parseList(sentence):
 	"""parse array to word, and try to find feature vector."""
 	try:
 		for word in sentence:
+			# get list of vector and weight
 			flag, res = searchWord(word)
-			if flag == True:
-				featureVector.setVector(int(res))
+			for vec in res:
+				ary = vec.split(":")
+				v = ary[0]
+				w = ary[1]
+				if flag == True:
+					featureVector.setVector(int(v), weight=int(w))
 	except:
-		print("exception in searchSubject.")
+		print("Exception in parseList.")
+		print "--------------------------------------------"
+		print traceback.format_exc(sys.exc_info()[2])
+		print "--------------------------------------------"
 
 def searchWord(word):
-	"""judge whether inputword correspond with data on word.csv."""
+	"""
+	judge whether inputword correspond with data on word.csv.
+	return flag and res, res=[v1:w1,v2:w2...] or []
+	"""
 	flag = False
-	res = ""
-	for buf in worditem:
-		if word == unicode(buf[1],"utf-8"):
-			print "In semanticAnalysis.py, hitword:%s, buf[0]:%s" % (word, unicode(buf[0],"utf-8"))
-			res = buf[3]
-			flag = True
-		#else:
-			#print "input-word:%s, table-value:%s" % (word, unicode(buf[0],"utf-8"))
-	return flag, res
+	res = []
+	try:
+		for buf in worditem:
+			if word == unicode(buf[1],"utf-8"):
+				print "In semanticAnalysis.py, hitword:%s, buf[0]:%s" % (word, unicode(buf[0],"utf-8"))
+				res.append(buf[3])
+				flag = True
+		return flag, res
+	except:
+		print "Exception in searchWord."
+		print "--------------------------------------------"
+		print traceback.format_exc(sys.exc_info()[2])
+		print "--------------------------------------------"
+		return False, res 
 
 class featureVector:
 	fv = np.arange(0)
@@ -74,7 +92,7 @@ class featureVector:
 		return mat
 	
 	@classmethod
-	def setVector(self, coordinate, reward=1, vectype="input"):
+	def setVector(self, coordinate, weight=1, vectype="input"):
 		"""set feature vector include init."""
 		try:
 			# select vector
@@ -88,7 +106,7 @@ class featureVector:
 			# set value
 			column = coordinate % 10
 			row = (coordinate - column)/10
-			v[row][column] += reward
+			v[row][column] += weight
 			# update
 			if vectype == "input":
 				featureVector.fv = v
@@ -96,7 +114,7 @@ class featureVector:
 				featureVector.model.append(v)
 		except:
 			print "Exception in setVector."
-			print "coordinate:%d, reward=%d" % (coordinate, reward)
+			print "coordinate:%d, weight=%d" % (coordinate, reward)
 	
 	@classmethod
 	def setModel(self):

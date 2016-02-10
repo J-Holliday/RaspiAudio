@@ -30,12 +30,6 @@ def interpreter(order,msg): # orderは認識された音声 msgはそれ以外�
 
 	return "interpreter is correctly finished."
 
-def interpreter2(msg):
-	"""msg is should be string-array type."""
-	sa.send(msg)
-	#for word in msg:
-	#	print "製作中だよ"
-
 if __name__ == "__main__":
 	host = 'localhost'
 	port = 10500
@@ -66,7 +60,8 @@ if __name__ == "__main__":
 					sentence.append(unicode(ary2[1],"utf-8","ignore"))
 
 				if sentenceFlag == 0:
-					interpreter2(sentence)
+					on = sa.send(sentence)
+					print "OrderNumber:%s" % str(on)
 					sentence = []
 				#msg = interpreter(ary2[1],msg)
 			except:

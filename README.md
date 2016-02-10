@@ -19,6 +19,9 @@ Tachikawa
 
 Branch Create:02091500
 
+1. finish feature-vector base model.
+2. leave word.csv adjusting to order.csv
+
 ## Description
 
 Tachikawa has below policy.

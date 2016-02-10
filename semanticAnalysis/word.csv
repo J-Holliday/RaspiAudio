@@ -1,4 +1,4 @@
-Subject,Word,Roman,Vector(colon separated value)
-music,再生,saisei,20
-music,シャッフル,shaffuru,22
-music,停止,teishi,23
+Subject,Word,Roman,Vector(v1:w1)
+music,再生,saisei,20:1
+music,シャッフル,shaffuru,22:1
+music,停止,teishi,23:1
