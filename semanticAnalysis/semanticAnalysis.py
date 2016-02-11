@@ -51,7 +51,7 @@ def parseList(sentence):
 				v = ary[0]
 				w = ary[1]
 				if flag == True:
-					featureVector.setVector(int(v), weight=int(w))
+					featureVector.setVector(int(v), weight=float(w))
 	except:
 		print("Exception in parseList.")
 		print "--------------------------------------------"
@@ -86,7 +86,7 @@ class featureVector:
 	@classmethod
 	def initVector(self):
 		"""init feature vector."""
-		seq = np.arange(100)
+		seq = np.arange(100.)
 		mat = seq.reshape((10,10))
 		mat *= 0
 		return mat
