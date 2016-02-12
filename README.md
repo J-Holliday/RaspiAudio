@@ -1,30 +1,26 @@
-# RaspiAudio - hachiouji 
+# RaspiAudio - takao 
 
 ====
 
 ## Overview
 
 [master]
-[hachiouji]
+[takao]
 
-Hachiouji is heir to tachikawa.
+Takao is heir to takao.
 
 !Important
-Tachikawa have realized that input wavfile to julius-server.
-* First, execute "$ python ASRServer.py &"
-* Second, execute "$ python ASRClient.py" (or such name)
-Then, I can get Julius-output.
-
-Therefore, tachikawa give roll of current-branch to new branch hachiouji.
-hachiouji is expected that Julius with wavfile become useful.
+Hachiouji had suddnly problem which Julius with wavfile become unuseful.
+Then hachiouji have fixed fortunately.
+So, current hachiouji is as backup, and takao take over hachioji's roll.
 
 ## Status
 
-Branch Create:02102336
+Branch Create:02121227
 
 ## Description
 
-Hachiouji has below policy.
+Takao has below policy.(equal hachioji)
 
 1. Make julius with wavfile become useful.
 
