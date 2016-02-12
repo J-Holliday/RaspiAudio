@@ -4,10 +4,10 @@
 # written by Ryota NISHIMURA 2015/Dec./16
 
 ### configure ###########
-JULIUS_HOME		= "/home/takaoka/workspace/raspi-audio/downloads/julius-4.3.1/julius/."
-JULIUS_EXEC		= '/home/takaoka/workspace/raspi-audio/downloads/julius-4.3.1/julius/julius -C /home/takaoka/workspace/raspi-audio/downloads/julius-kits/dictation-kit-v4.3.1-linux/am-gmm.jconf -C /home/takaoka/workspace/raspi-audio/downloads/julius-kits/dictation-kit-v4.3.1-linux/main.jconf -input file -outfile'
+JULIUS_HOME		= "/home/pi/workspace/raspi-audio/downloads/julius-4.3.1/julius/."
+JULIUS_EXEC		= '/home/pi/workspace/raspi-audio/downloads/julius-4.3.1/julius/julius -C /home/pi/workspace/raspi-audio/downloads/julius-kits/dictation-kit-v4.3.1-linux/am-gmm.jconf -C /home/pi/workspace/raspi-audio/downloads/julius-kits/dictation-kit-v4.3.1-linux/main.jconf -input file -outfile'
 SERVER_PORT 	= 8000
-ASR_FILEPATH	= '/home/takaoka/workspace/raspi-audio/RaspiAudio/voice/'
+ASR_FILEPATH	= '/home/pi/workspace/raspi-audio/RaspiAudio/voice/'
 ASR_IN			= 'ch_asr.wav'
 ASR_RESULT		= 'ch_asr.out'
 OUT_CHKNUM		= 5 # for avoid that the output file is empty
