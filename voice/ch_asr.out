@@ -1,5 +1,5 @@
-sentence1: <s> わるい KEY020000 し </s>
-wseq1: 8 3 1 4 9
-phseq1: silB | w a r u i | r o m a n o m u s u m e | sh i | silE
-cmscore1: 0.908 0.887 0.970 0.437 1.000
-score1: -8334.738281
+sentence1:  これ は マイク の テスト です 。
+wseq1: <s> これ+代名詞 は+助詞 マイク+名詞 の+助詞 テスト+名詞 です+助動詞 </s>
+phseq1: silB | k o r e | w a | m a i k u | n o | t e s u t o | d e s u | silE
+cmscore1: 0.564 0.538 0.329 0.399 0.227 0.131 0.588 1.000
+score1: -7946.526367 (AM: -7811.972656  LM: -134.553558)
