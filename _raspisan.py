@@ -6,7 +6,6 @@ from mail import mail
 from semanticAnalysis import semanticAnalysis as sa
 import socket
 import subprocess
-import requests
 
 def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
 	if order == "再生":
@@ -37,25 +36,15 @@ if __name__ == "__main__":
 
 	#news.get()
 	newsparser.parser.parse("newsStation/news.txt")
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	s.connect((host, port))
 	yukkuri.talk("ゆっくりしていってね")
 	msg = ""
 	sentenceFlag = 0
 	sentence = []
-	url = "http://192.168.100.101:2222/asr_julius/"
-	files = {
-		"myFile": open("voice/record.wav", "rb")
-	}
-	s = requests.Session()
-	while True:
-		r = s.post(url, files=files)
-		ary = r.text.split("\n")
-		data = ary[0].split(":")
-		words = data[1].strip(" ").split(" ")
-		on = sa.send(words)
-		print str(words).decode("unicode-escape")
-		print "OrderNumber:%s" % str(on)
-		quit()
 
+	while True:
+		res = s.recv(1024)
 		if not res.find('WORD') == -1:	
 			try:
 				ary1 = res.split('WORD')
