@@ -8,28 +8,27 @@ import socket
 import subprocess
 import requests
 
-def interpreter(order,msg): # orderは認識された音声 msgはそれ以外の引数
-	if order == "再生":
+def decoder(order):
+	if order == 20:
 		musicPlayer.audio.play()
-	elif order == "停止" and musicPlayer.audio.flag == 1:
-		print("stop with audio.")
+	elif order == 23 and musicPlayer.audio.flag == 1:
 		musicPlayer.audio.stop()
-	elif order == "選択":
-		musicPlayer.select.callSelectMode()
-	elif order == "ニュース":
+	#elif order == 24:
+	#	musicPlayer.select.callSelectMode()
+	elif order == 30:
 		newsparser.speaker.playnews()
-	elif order == "停止" and newsparser.speaker.flag == 1:
+	elif order == 31 and newsparser.speaker.flag == 1:
 		print("stop with news.")
 		newsparser.speaker.stopnews()
-	elif musicPlayer.select.flag == 1:
-		musicPlayer.select.selectMusic(order) 
-	elif order == "Gmail":
-		print "callgmail"
-		hoge = mail.checkGmail()
-		print hoge
-		yukkuri.talk(hoge)
+	#elif musicPlayer.select.flag == 1:
+	#	musicPlayer.select.selectMusic(order) 
+	#elif order == "Gmail":
+	#	print "callgmail"
+	#	hoge = mail.checkGmail()
+	#	print hoge
+	#	yukkuri.talk(hoge)
 
-	return "interpreter is correctly finished."
+	return "decoder is correctly finished."
 
 if __name__ == "__main__":
 	host = 'localhost'
@@ -55,6 +54,7 @@ if __name__ == "__main__":
 		print str(words).decode("unicode-escape")
 		print "OrderNumber:%s" % str(on)
 		quit()
+		decoder(int(on))
 
 		if not res.find('WORD') == -1:	
 			try:
